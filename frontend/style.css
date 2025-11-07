@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.6s ease-in-out;
+  overflow: hidden;
+}
+
+
+.container {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  color: #fff;
+  transition: all 0.4s ease;
+  animation: fadeIn 1.5s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+
+input {
+  width: 80%;
+  padding: 0.8rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px #00c6ff;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  transform: scale(1.05);
+}
+
+
+#weatherCard {
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+#weatherCard img {
+  width: 100px;
+  height: 100px;
+}
+
+#cityName {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#description {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+#temperature,
+#humidity,
+#wind {
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+#themeToggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 12px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#themeToggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(20deg);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+body.sunny {
+  background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+
+body.cloudy {
+  background: linear-gradient(135deg, #757f9a, #d7dde8);
+}
+
+body.rainy {
+  background: linear-gradient(135deg, #00c6fb, #005bea);
+}
+
+body.snowy {
+  background: linear-gradient(135deg, #83a4d4, #b6fbff);
+}
+
+body.thunderstorm {
+  background: linear-gradient(135deg, #232526, #414345);
+}
+
+body.mist {
+  background: linear-gradient(135deg, #606c88, #3f4c6b);
+}
